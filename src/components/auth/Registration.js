@@ -37,7 +37,7 @@ export default class Registration extends Component {
       )
       .then((res) => {
         if (res.data.status === "created") {
-          this.props.handleSuccesssfulAuth(res.data);
+          this.props.handleSuccessfulAuth(res.data);
         }
       })
       .catch((error) => {
