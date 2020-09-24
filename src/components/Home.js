@@ -14,6 +14,16 @@ export default class Home extends Component {
     this.props.history.push("/dashboard");
   }
 
+  handleRequest() {
+    axios
+      .get("https://msico-rails-backend.herokuapp.com", {
+        withCredentials: true,
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  }
+
   handleLogoutClick() {
     axios
       .delete("https://msico-rails-backend.herokuapp.com/logout", {
@@ -31,6 +41,7 @@ export default class Home extends Component {
       <div>
         <h1>Home</h1>
         <h1>Status: {this.props.loggedInStatus}</h1>
+        <button onClick={this.handleRequest}>Request Api</button>
         <Registration handleSuccessfulAuth={this.handleSuccessfulAuth} />
         <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
         <button
