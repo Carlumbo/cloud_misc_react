@@ -4,6 +4,7 @@ import Home from "./Home";
 import Dashboard from "./Dashboard";
 import DataList from "../container/DataList";
 import axios from "axios";
+import Header from "../container/Header";
 export default class App extends Component {
   constructor() {
     super();
@@ -69,12 +70,15 @@ export default class App extends Component {
               exact
               path={"/"}
               render={(props) => (
-                <Home
-                  {...props}
-                  handleLogin={this.handleLogin}
-                  handleLogout={this.handleLogout}
-                  loggedInStatus={this.state.loggedInStatus}
-                />
+                <div>
+                  <Header />
+                  <Home
+                    {...props}
+                    handleLogin={this.handleLogin}
+                    handleLogout={this.handleLogout}
+                    loggedInStatus={this.state.loggedInStatus}
+                  />
+                </div>
               )}
             ></Route>
             <Route path={"/data"}>
