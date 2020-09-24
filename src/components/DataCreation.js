@@ -59,8 +59,7 @@ class DataCreation extends Component {
             type="text"
             name="type_of"
             placeholder="Data Type"
-            value="temperature"
-            //value={this.state.type}
+            value={this.state.type}
             onChange={this.handleChange}
           />
           <br />
@@ -77,7 +76,6 @@ class DataCreation extends Component {
             name="data_point"
             placeholder="Data point"
             value={this.state.data_point}
-            //value="54.5"
             step="0.0001"
             max="999999999999"
             min="0"
