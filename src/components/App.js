@@ -18,7 +18,9 @@ export default class App extends Component {
 
   checkLoginStatus() {
     axios
-      .get("http://localhost:3001/logged_in", { withCredentials: true })
+      .get("https://msico-rails-backend.herokuapp.com/logged_in", {
+        withCredentials: true,
+      })
       .then((res) => {
         if (
           res.data.logged_in &&

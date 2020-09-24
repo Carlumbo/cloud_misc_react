@@ -27,7 +27,7 @@ class DataCreation extends Component {
     //console.log(this);
     axios
       .post(
-        "http://localhost:3001/data",
+        "https://msico-rails-backend.herokuapp.com/data",
         {
           type_of: this.state.type_of,
           title: this.state.title,

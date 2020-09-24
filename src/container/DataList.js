@@ -9,7 +9,7 @@ class DataList extends Component {
   };
 
   componentDidMount() {
-    axios.get("http://localhost:3001/data").then((res) => {
+    axios.get("https://msico-rails-backend.herokuapp.com/data").then((res) => {
       //console.log(res);
       const dataPoints = res.data;
       console.log(this.props);

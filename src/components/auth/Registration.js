@@ -24,7 +24,7 @@ export default class Registration extends Component {
   handleSubmit(event) {
     axios
       .post(
-        "http://localhost:3001/registrations",
+        "https://msico-rails-backend.herokuapp.com/registrations",
         {
           user: {
             email: this.state.email,
