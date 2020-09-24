@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Dashboard from "./Dashboard";
+import DataList from "../container/DataList";
 import axios from "axios";
 export default class App extends Component {
   constructor() {
@@ -76,6 +77,9 @@ export default class App extends Component {
                 />
               )}
             ></Route>
+            <Route path={"/data"}>
+              <DataList user={this.state} />
+            </Route>
             <Route
               exact
               path={"/dashboard"}

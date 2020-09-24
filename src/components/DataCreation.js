@@ -6,10 +6,10 @@ class DataCreation extends Component {
     super(props);
 
     this.state = {
-      type: "",
+      type_of: "",
       title: "",
       user_id: "",
-      datainfo: "",
+      data_point: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -23,29 +23,32 @@ class DataCreation extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
+    //console.log(this);
     axios
       .post(
-        "http://localhost:3001/products",
+        "http://localhost:3001/data",
         {
-          product: {
-            type: this.state.type,
-            title: this.state.title,
-            user_id: this.user.id,
-          },
+          type_of: this.state.type_of,
+          title: this.state.title,
+          user_id: this.props.user.id,
+          data_point: this.state.data_point,
         },
         { withCredentials: true }
       )
       .then((res) => {
-        console.log(res);
+        if (res.statusText === "Created") {
+          console.log(res);
+        }
       })
       .catch((error) => {
         console.log("create error", error);
       });
 
-    event.preventDefault();
-    alert("data submitted");
+    //alert("data submitted");
   }
   render() {
+    console.log(typeof this.props.user.id);
     return (
       <div>
         <label>Input Data</label>
@@ -54,11 +57,11 @@ class DataCreation extends Component {
           <br />
           <input
             type="text"
-            name="type"
+            name="type_of"
             placeholder="Data Type"
-            value={this.state.type}
+            value="temperature"
+            //value={this.state.type}
             onChange={this.handleChange}
-            required
           />
           <br />
           <input
@@ -67,19 +70,18 @@ class DataCreation extends Component {
             placeholder="Data Name"
             value={this.state.title}
             onChange={this.handleChange}
-            required
           />
           <br />
           <input
             type="number"
-            name="datainfo"
-            placeholder="Rating"
-            value={this.state.datainfo}
+            name="data_point"
+            placeholder="Data point"
+            value={this.state.data_point}
+            //value="54.5"
             step="0.0001"
             max="999999999999"
             min="0"
             onChange={this.handleChange}
-            required
           />
 
           <br />
