@@ -21,6 +21,9 @@ export default class Home extends Component {
       })
       .then((res) => {
         console.log(res);
+      })
+      .catch((error) => {
+        console.log("api error", error);
       });
   }
 
