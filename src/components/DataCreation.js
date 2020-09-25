@@ -24,7 +24,6 @@ class DataCreation extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    //console.log(this);
     axios
       .post(
         "https://msico-rails-backend.herokuapp.com/data",
