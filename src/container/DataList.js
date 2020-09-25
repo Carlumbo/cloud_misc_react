@@ -31,7 +31,7 @@ class DataList extends Component {
     } else {
       return (
         <div>
-          <h5>Login to view Data</h5>
+          <h5>Login to view Data </h5>
         </div>
       );
     }
