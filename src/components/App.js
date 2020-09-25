@@ -22,23 +22,24 @@ export default class App extends Component {
         withCredentials: true,
       })
       .then((res) => {
-        if (
-          res.data.logged_in &&
-          this.state.loggedInStatus === "NOT_LOGGED_IN"
-        ) {
-          this.setState({
-            loggedInStatus: "LOGGED_IN",
-            user: res.data.user,
-          });
-        } else if (
-          !res.data.logged_in &&
-          this.state.loggedInStatus === "LOGGED_IN"
-        ) {
-          this.setState({
-            loggedInStatus: "NOT_LOGGED_IN",
-            user: {},
-          });
-        }
+        console.log(res);
+        // if (
+        //   res.data.logged_in &&
+        //   this.state.loggedInStatus === "NOT_LOGGED_IN"
+        // ) {
+        //   this.setState({
+        //     loggedInStatus: "LOGGED_IN",
+        //     user: res.data.user,
+        //   });
+        // } else if (
+        //   !res.data.logged_in &&
+        //   this.state.loggedInStatus === "LOGGED_IN"
+        // ) {
+        //   this.setState({
+        //     loggedInStatus: "NOT_LOGGED_IN",
+        //     user: {},
+        //   });
+        // }
       })
       .catch((error) => {
         console.log("check login error", error);
@@ -46,6 +47,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    console.log("hello");
     this.checkLoginStatus();
   }
 
