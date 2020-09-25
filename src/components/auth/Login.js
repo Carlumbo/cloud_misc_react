@@ -34,9 +34,9 @@ export default class Login extends Component {
       )
       .then((res) => {
         console.log(res);
-        // if (res.data.status === "created") {
-        //   this.props.handleSuccessfulAuth(res.data);
-        // }
+        if (res.data.status === "created") {
+          this.props.handleSuccessfulAuth(res.data);
+        }
       })
       .catch((error) => {
         console.log("login error", error);
