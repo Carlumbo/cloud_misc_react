@@ -23,7 +23,7 @@ export default class Login extends Component {
     const { email, password } = this.state;
     axios
       .post(
-        "https://msico-rails-backend.herokuapp.com/sessions",
+        "http://msico-rails-backend.herokuapp.com/sessions",
         {
           user: {
             email: email,
@@ -33,9 +33,10 @@ export default class Login extends Component {
         { withCredentials: true }
       )
       .then((res) => {
-        if (res.data.status === "created") {
-          this.props.handleSuccessfulAuth(res.data);
-        }
+        console.log(res);
+        // if (res.data.status === "created") {
+        //   this.props.handleSuccessfulAuth(res.data);
+        // }
       })
       .catch((error) => {
         console.log("login error", error);

@@ -73,7 +73,7 @@ export default class App extends Component {
               path={"/"}
               render={(props) => (
                 <div>
-                  <Header />
+                  <Header loggedInStatus={this.state} />
                   <Home
                     {...props}
                     handleLogin={this.handleLogin}

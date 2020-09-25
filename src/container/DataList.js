@@ -20,8 +20,8 @@ class DataList extends Component {
   }
   render() {
     let user = this.props.user;
-    //console.log(user);
-    if (user.loggedInStatus !== "LOGGED_IN") {
+    console.log(user);
+    if (user.loggedInStatus === "LOGGED_IN") {
       return (
         <div>
           <DataCreation user={this.props.user.user} />
