@@ -10,6 +10,7 @@ export default class Home extends Component {
   }
 
   handleSuccessfulAuth(data) {
+    console.log(data + "hsa");
     this.props.handleLogin(data);
     this.props.history.push("/dashboard");
   }
