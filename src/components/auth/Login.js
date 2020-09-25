@@ -23,7 +23,7 @@ export default class Login extends Component {
     const { email, password } = this.state;
     axios
       .post(
-        "http://msico-rails-backend.herokuapp.com/sessions",
+        "https://msico-rails-backend.herokuapp.com/sessions",
         {
           user: {
             email: email,
